@@ -1,7 +1,6 @@
 body {
     font-family: sans-serif;
     padding-left: 11em;
-    font-family: Georgia, "Times New Roman", Times, serif;
     color: purple;
     background-color: #5b826d;
 }
@@ -17,7 +16,7 @@ ul.navbar {
 }
 
 h1 {
-    font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+    font-family: Helvetica, sans-serif;
 }
 
 ul.navbar li {
@@ -25,10 +24,6 @@ ul.navbar li {
     margin: 0.5em 0;
     padding: 0.3em;
     border-right: 1em solid black;
-}
-
-ul.navbar a {
-    text-decoration: none;
 }
 
 a:link {
@@ -39,6 +34,10 @@ a:visited {
     color: purple;
 }
 
+ul.navbar a {
+    text-decoration: none;
+}
+
 address {
     margin-top: 1em;
     padding-top: 1em;
@@ -47,19 +46,19 @@ address {
 
 table {
     border-collapse: collapse;
-    border: 2px solid rgb(200, 200, 200);
+    border: 2px solid rgb(200 200 200);
     letter-spacing: 1px;
     font-size: 0.8rem;
 }
 
 td,
 th {
-    border: 1px solid rgb(190, 190, 190);
+    border: 1px solid rgb(190 190 190);
     padding: 10px 20px;
 }
 
 th {
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(235 235 235);
 }
 
 td {
@@ -67,11 +66,11 @@ td {
 }
 
 tr:nth-child(even) td {
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(250 250 250);
 }
 
 tr:nth-child(odd) td {
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(245 245 245);
 }
 
 caption {
