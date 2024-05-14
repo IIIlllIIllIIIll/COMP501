@@ -43,3 +43,7 @@ address {
     padding-top: 1em;
     border-top: thin dotted;
 }
+
+pre.mermaid {
+    white-space: normal;
+}
