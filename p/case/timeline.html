@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width" />
+        <meta name="description" content="TODO" />
+        <meta name="keywords" content="COMP501" />
+        <meta name="color-scheme" content="normal" />
+
+        <!-- TODO -->
+        <link rel="icon" href="../../images/favicon.ico" />
+        <link rel="stylesheet" href="../../styles/mystyles.css">
+
+        <title>Timeline</title>
+    </head>
+
+    <body>
+        <img src="../../images/csg4ed-small.png" alt="Enhancing Social Good in Computing" />
+
+        <ul class="navbar">
+            <li><a href="../../index.html">Home page</a></li>
+            <li><a href="index.html">Cases</a></li>
+        </ul>
+
+        <!-- Main content -->
+        <h1>Timeline</h1>
+        <pre class="mermaid">
+                timeline
+                    title History of two cases
+                    section 2020
+                        August : UMN researchers submitted "Hypocrite Commits" to the Linux Kernel
+                        November : Paper "On the Feasibility of Stealthily Introducing Vulnerabilities in Open-Source Software via Hypocrite Commits" has been published
+                    section 2021
+                        April: UMN people submitted poor quality patches to the Linux Kernel
+                        : Linux community reject patches from UMN by default
+                        : The "Hypocrite Commits" withdrawed from publication
+                        October : "Jia Tan" submitted a patch to XZ Utils, and started to build trust
+                    section 2022
+                    section 2023
+                        June : "Jia Tan" introduced the GNU indirect function (IFUNC) into XZ Utils
+                        : "Jia Tan" disabled IFUNC in the OSS-Fuzz project
+                    section 2024
+                        February : "Jia Tan" added test file that contains backdoor to the XZ Utils
+                                 : "Jia Tan" release version 5.6.0 of XZ Utils on GitHub that contains backdoor
+        </pre>
+        <script type="module">
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    </body>
+
+</html>
