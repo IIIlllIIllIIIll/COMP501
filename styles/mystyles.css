@@ -1,6 +1,6 @@
 body {
     padding-left: 11em;
-    font-family: "Georgia", "Times New Roman", "Times", "serif";
+    font-family: "Georgia";
     color: purple;
     background-color: #5b826d;
 }
@@ -16,7 +16,7 @@ ul.navbar {
 }
 
 h1 {
-    font-family: "Helvetica", "Geneva", "Arial", "SunSans-Regular", "sans-serif";
+    font-family: "Helvetica";
 }
 
 ul.navbar li {
@@ -26,16 +26,16 @@ ul.navbar li {
     border-right: 1em solid black;
 }
 
-ul.navbar a {
-    text-decoration: none;
-}
-
 a:link {
     color: blue;
 }
 
 a:visited {
     color: purple;
+}
+
+ul.navbar a {
+    text-decoration: none;
 }
 
 address {
