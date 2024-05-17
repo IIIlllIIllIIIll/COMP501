@@ -16,7 +16,7 @@ ul.navbar {
 }
 
 h1 {
-    font-family: Consolas;
+    font-family: Consolas, monaco, monospace;
 }
 
 ul.navbar li {
