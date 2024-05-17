@@ -1,6 +1,6 @@
 body {
     padding-left: 11em;
-    font-family: Georgia, sans-serif;
+    font-family: Consolas, monaco, monospace;
     color: purple;
     background-color: #5b826d;
 }
@@ -16,7 +16,7 @@ ul.navbar {
 }
 
 h1 {
-    font-family: Helvetica, sans-serif;
+    font-family: Consolas;
 }
 
 ul.navbar li {
