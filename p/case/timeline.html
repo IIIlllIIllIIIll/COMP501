@@ -47,7 +47,18 @@
         <script type="module">
             import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
             const theme = getColorPreference();
-            mermaid.initialize({ startOnLoad: true, theme: theme === "light-theme" ? "default" : "dark" });
+            const dark_config = {
+                cScale0: "#8f0000",
+                cScale1: "#008f00",
+                cScale2: "#8f008f",
+                cScale3: "#9f9f00",
+                cScale4: "#4169E1",
+            };
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: theme === "dark-theme" ? "dark" : "default",
+                themeVariables: theme === "dark-theme" ? dark_config : undefined,
+            });
         </script>
     </body>
 </html>
