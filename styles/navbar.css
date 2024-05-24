@@ -36,6 +36,7 @@ ul.navbar a:hover:not(.active) {
 }
 
 /* Dark mode */
+/* stylelint-disable no-descending-specificity */
 body.dark-theme ul.navbar {
     background-color: #333;
 
@@ -51,3 +52,4 @@ body.dark-theme ul.navbar {
         background-color: #111;
     }
 }
+/* stylelint-enable no-descending-specificity */
