@@ -4,41 +4,10 @@ body {
     color: purple;
 }
 
-ul.navbar {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    top: 0;
-    width: 100%;
-    border: 1px solid #e7e7e7;
-    background-color: #f3f3f3;
-}
-
-ul.navbar li {
-    float: left;
-    border-right: 1px solid #bbbbbb;
-}
-
-ul.navbar li:last-child {
-    border-right: none;
-}
-
-ul.navbar a {
-    display: block;
-    color: #666666;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-ul.navbar a.active {
+/* Dark mode */
+body.dark-theme {
+    background-color: black;
     color: white;
-    background-color: #04aa6d;
-}
-
-ul.navbar a:hover:not(.active) {
-    background-color: #dddddd;
 }
 
 h1 {
@@ -61,26 +30,4 @@ address {
 
 pre.mermaid {
     white-space: normal;
-}
-
-/* Dark mode */
-body.dark-theme {
-    background-color: black;
-    color: white;
-
-    ul.navbar {
-        background-color: #333333;
-
-        a {
-            color: white;
-        }
-
-        a.active {
-            background-color: #04aa6d;
-        }
-
-        a:hover:not(.active) {
-            background-color: #111111;
-        }
-    }
 }
