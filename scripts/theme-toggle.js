@@ -1,3 +1,4 @@
+"use strict";
 const light = "light-theme";
 const dark = "dark-theme";
 
@@ -11,28 +12,38 @@ const getColorPreference = () => {
 };
 
 const setPreference = (preference) => {
-    document.body.classList.replace(preference === light ? dark : light, preference);
+    const replaced = document.body.classList.replace(preference === light ? dark : light, preference);
 
-    const element = document.querySelectorAll(".local-url");
-    for (let i = 0; i < element.length; i++) {
-        const url = new URL(element[i].href);
+    {
+        const url = new URL(window.location.href);
         url.searchParams.set("theme", preference);
-        element[i].href = url;
+        window.history.replaceState(null, "", url.pathname + url.search + url.hash);
     }
 
-    const url = new URL(window.location.href);
-    url.searchParams.set("theme", preference);
-    window.history.replaceState(null, "", url.pathname + url.search + url.hash);
-};
+    if (replaced) {
+        document.body.dispatchEvent(new CustomEvent("theme-changed"));
+    }
 
-const onClick = () => {
-    const preference = getColorPreference() === dark ? light : dark;
-    setPreference(preference);
+    {
+        const element = document.querySelectorAll(".local-url");
+        for (let i = 0; i < element.length; i++) {
+            const url = new URL(element[i].href);
+            url.searchParams.set("theme", preference);
+            element[i].href = url;
+        }
+    }
+
+    if (preference === dark) {
+        document.querySelector("#set-light-theme")?.classList.remove("active");
+        document.querySelector("#set-dark-theme")?.classList.add("active");
+    } else {
+        document.querySelector("#set-dark-theme")?.classList.remove("active");
+        document.querySelector("#set-light-theme")?.classList.add("active");
+    }
 };
 
 window.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add(light);
-    setPreference(getColorPreference());
-    // now this script can find and listen for clicks on the control
-    document.querySelector(".theme-toggle")?.addEventListener("click", onClick);
+    const preference = getColorPreference();
+    document.body.classList.add(preference);
+    setPreference(preference);
 });

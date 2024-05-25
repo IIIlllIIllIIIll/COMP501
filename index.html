@@ -38,15 +38,14 @@
             <li class="dropdown" style="float: right; width: 6em">
                 <a class="dropbtn" onclick="setPreference(getColorPreference() === dark ? light : dark);"> Theme </a>
                 <ul class="dropdown-content">
-                    <li><a onclick="setPreference(light);">Light</a></li>
-                    <li><a onclick="setPreference(dark);">Dark</a></li>
+                    <li><a id="set-light-theme" onclick="setPreference(light);">Light</a></li>
+                    <li><a id="set-dark-theme" onclick="setPreference(dark);">Dark</a></li>
                 </ul>
             </li>
         </ul>
 
         <!-- Main content -->
         <h1>CTiS: Impact of Technology Site</h1>
-        <button class="theme-toggle">Toggle dark mode</button>
 
         <p>
             This mock-up site is intended to support your team project so you can take this as a set of files and as a
