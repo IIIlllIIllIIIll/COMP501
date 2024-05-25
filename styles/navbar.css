@@ -2,19 +2,21 @@ ul.navbar {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     top: 0;
     width: 100%;
     border: 1px solid #e7e7e7;
     background-color: #f3f3f3;
+    display: inline-table;
 }
 
-ul.navbar li {
+ul.navbar > li {
     float: left;
+    background-color: inherit;
     border-right: 1px solid #bbb;
 }
 
-ul.navbar li:last-child {
+ul.navbar > li:last-child {
     border-right: none;
 }
 
@@ -53,3 +55,28 @@ body.dark-theme ul.navbar {
     }
 }
 /* stylelint-enable no-descending-specificity */
+
+ul.navbar .dropdown {
+    position: relative;
+    display: block;
+}
+
+ul.navbar .dropdown-content {
+    display: none;
+    padding: 0;
+    position: absolute;
+    background-color: inherit;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+ul.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+ul.navbar .dropbtn {
+    padding: 14px 0;
+    width: 100%;
+}
