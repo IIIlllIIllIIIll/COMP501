@@ -26,6 +26,9 @@ ul.navbar a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+
+    border: none;
+    cursor: pointer;
 }
 
 ul.navbar a.active {
@@ -64,6 +67,7 @@ ul.navbar .dropdown {
 ul.navbar .dropdown-content {
     display: none;
     padding: 0;
+    right: 0;
     position: absolute;
     background-color: inherit;
     width: 100%;

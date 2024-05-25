@@ -27,12 +27,19 @@
             <li><a class="local-url" href="p/ethics.html">Ethical Reflections</a></li>
             <li><a class="local-url" href="p/references.html">References</a></li>
             <li><a class="local-url" href="p/process/index.html">Process Support</a></li>
-            <li class="dropdown" style="width: 6em">
+            <li class="dropdown" style="width: 6em; border-right: none">
                 <a class="local-url dropbtn" href="p/case/index.html">Cases</a>
                 <ul class="dropdown-content">
                     <li><a class="local-url" href="p/case/case1.html">Case 1</a></li>
                     <li><a class="local-url" href="p/case/case2.html">Case 2</a></li>
                     <li><a class="local-url" href="p/case/timeline.html">Timeline</a></li>
+                </ul>
+            </li>
+            <li class="dropdown" style="float: right; width: 6em">
+                <a class="dropbtn" onclick="setPreference(getColorPreference() === dark ? light : dark);"> Theme </a>
+                <ul class="dropdown-content">
+                    <li><a onclick="setPreference(light);">Light</a></li>
+                    <li><a onclick="setPreference(dark);">Dark</a></li>
                 </ul>
             </li>
         </ul>
