@@ -28,7 +28,6 @@ ul.navbar a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-
     border: none;
     cursor: pointer;
 }
@@ -55,7 +54,7 @@ ul.navbar .dropdown-content {
     background-color: inherit;
     width: 100%;
     overflow: hidden;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px 0 rgba(0 0 0 20%);
     z-index: 1;
 }
 
