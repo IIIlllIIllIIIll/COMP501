@@ -31,4 +31,9 @@ address {
 
 pre.mermaid {
     white-space: normal;
+    display: none;
+}
+
+pre.mermaid[data-processed="true"] {
+    display: unset;
 }

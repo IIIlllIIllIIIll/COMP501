@@ -3,9 +3,9 @@ const light = "light-theme";
 const dark = "dark-theme";
 
 const getColorPreference = () => {
-    const query = new URLSearchParams(window.location.search);
-    if (query.has("theme")) {
-        return query.get("theme");
+    const preference = new URLSearchParams(location.search).get("theme");
+    if (preference && [light, dark].includes(preference)) {
+        return preference;
     }
 
     return window.matchMedia("(prefers-color-scheme: dark)").matches ? dark : light;
@@ -15,9 +15,9 @@ const setPreference = (preference) => {
     const replaced = document.body.classList.replace(preference === light ? dark : light, preference);
 
     {
-        const url = new URL(window.location.href);
+        const url = new URL(location.href);
         url.searchParams.set("theme", preference);
-        window.history.replaceState(null, "", url.pathname + url.search + url.hash);
+        history.replaceState(null, "", url.pathname + url.search + url.hash);
     }
 
     if (replaced) {
@@ -42,8 +42,8 @@ const setPreference = (preference) => {
     }
 };
 
-window.addEventListener("DOMContentLoaded", () => {
-    const preference = getColorPreference();
-    document.body.classList.add(preference);
-    setPreference(preference);
+document.addEventListener("DOMContentLoaded", () => {
+    setPreference(getColorPreference());
 });
+
+document.body.classList.add(getColorPreference());

@@ -42,25 +42,6 @@ ul.navbar a:hover:not(.active) {
     background-color: #ddd;
 }
 
-/* Dark mode */
-/* stylelint-disable no-descending-specificity */
-body.dark-theme ul.navbar {
-    background-color: #333;
-
-    a {
-        color: white;
-    }
-
-    a.active {
-        background-color: #04aa6d;
-    }
-
-    a:hover:not(.active) {
-        background-color: #111;
-    }
-}
-/* stylelint-enable no-descending-specificity */
-
 ul.navbar .dropdown {
     position: relative;
     display: block;
@@ -86,3 +67,23 @@ ul.navbar .dropbtn {
     padding: 14px 0;
     width: 100%;
 }
+
+/* Dark mode */
+/* stylelint-disable no-descending-specificity */
+body.dark-theme ul.navbar {
+    background-color: #333;
+
+    a {
+        color: #dcdcdc;
+    }
+
+    a.active {
+        color: white;
+        background-color: #04aa6d;
+    }
+
+    a:hover:not(.active) {
+        background-color: #111;
+    }
+}
+/* stylelint-enable no-descending-specificity */
