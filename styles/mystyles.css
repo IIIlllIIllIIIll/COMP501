@@ -1,7 +1,9 @@
 body {
+    margin-top: 4em;
     font-family: Consolas, monaco, monospace;
     background-color: #5b826d;
     color: purple;
+    font-size: 1.2vw;
 }
 
 /* Dark mode */
@@ -30,4 +32,9 @@ address {
 
 pre.mermaid {
     white-space: normal;
+    display: none;
+}
+
+pre.mermaid[data-processed="true"] {
+    display: unset;
 }

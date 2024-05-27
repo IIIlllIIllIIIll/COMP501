@@ -20,10 +20,28 @@
 
         <ul class="navbar">
             <li><a class="local-url" href="../../index.html">Home page</a></li>
-            <li><a class="local-url" href="index.html">Cases</a></li>
-            <li><a class="local-url" href="case1.html">Case 1</a></li>
-            <li><a class="local-url" href="case2.html">Case 2</a></li>
-            <li><a class="local-url active" href="timeline.html">Timeline</a></li>
+            <li><a class="local-url" href="../topic.html">Technology/Topic</a></li>
+            <li><a class="local-url" href="../opportunities.html">Opportunities</a></li>
+            <li><a class="local-url" href="../risks.html">Risks</a></li>
+            <li><a class="local-url" href="../choices.html">Choices</a></li>
+            <li><a class="local-url" href="../ethics.html">Ethical Reflections</a></li>
+            <li><a class="local-url" href="../references.html">References</a></li>
+            <li><a class="local-url" href="../process/index.html">Process Support</a></li>
+            <li class="dropdown" style="width: 6em; border-right: none">
+                <a class="local-url dropbtn active" href="index.html">Cases</a>
+                <ul class="dropdown-content">
+                    <li><a class="local-url" href="case1.html">Case 1</a></li>
+                    <li><a class="local-url" href="case2.html">Case 2</a></li>
+                    <li><a class="local-url active" href="timeline.html">Timeline</a></li>
+                </ul>
+            </li>
+            <li class="dropdown" style="float: right; width: 6em">
+                <a class="dropbtn" onclick="setPreference(getColorPreference() === dark ? light : dark);"> Theme </a>
+                <ul class="dropdown-content">
+                    <li><a id="set-light-theme" onclick="setPreference(light);">Light</a></li>
+                    <li><a id="set-dark-theme" onclick="setPreference(dark);">Dark</a></li>
+                </ul>
+            </li>
         </ul>
 
         <!-- Main content -->
@@ -48,7 +66,9 @@
                         : "Jia Tan" release version 5.6.0 of XZ Utils on GitHub that contains backdoor
         </pre>
         <script type="module">
+            "use strict";
             import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+
             const theme = getColorPreference();
             const dark_config = {
                 cScale0: "#8f0000",
@@ -61,6 +81,10 @@
                 startOnLoad: true,
                 theme: theme === "dark-theme" ? "dark" : "default",
                 themeVariables: theme === "dark-theme" ? dark_config : undefined,
+            });
+
+            document.body.addEventListener("theme-changed", () => {
+                location.reload();
             });
         </script>
     </body>

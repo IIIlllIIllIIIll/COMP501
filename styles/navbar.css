@@ -2,19 +2,23 @@ ul.navbar {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     border: 1px solid #e7e7e7;
     background-color: #f3f3f3;
+    display: inline-table;
 }
 
-ul.navbar li {
+ul.navbar > li {
     float: left;
+    background-color: inherit;
     border-right: 1px solid #bbb;
 }
 
-ul.navbar li:last-child {
+ul.navbar > li:last-child {
     border-right: none;
 }
 
@@ -24,6 +28,8 @@ ul.navbar a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    border: none;
+    cursor: pointer;
 }
 
 ul.navbar a.active {
@@ -35,16 +41,43 @@ ul.navbar a:hover:not(.active) {
     background-color: #ddd;
 }
 
+ul.navbar .dropdown {
+    position: relative;
+    display: block;
+}
+
+ul.navbar .dropdown-content {
+    display: none;
+    padding: 0;
+    right: 0;
+    position: absolute;
+    background-color: inherit;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 8px 16px 0 rgba(0 0 0 20%);
+    z-index: 1;
+}
+
+ul.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+ul.navbar .dropbtn {
+    padding: 14px 0;
+    width: 100%;
+}
+
 /* Dark mode */
 /* stylelint-disable no-descending-specificity */
 body.dark-theme ul.navbar {
     background-color: #333;
 
     a {
-        color: white;
+        color: #dcdcdc;
     }
 
     a.active {
+        color: white;
         background-color: #04aa6d;
     }
 
