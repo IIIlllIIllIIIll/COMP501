@@ -17,7 +17,7 @@ const setPreference = (preference) => {
     {
         const url = new URL(location.href);
         url.searchParams.set("theme", preference);
-        history.replaceState(null, "", url.pathname + url.search + url.hash);
+        history.replaceState(null, "", url.href);
     }
 
     if (replaced) {
