@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="description" content="TODO" />
+        <meta name="keywords" content="COMP501" />
+        <meta name="color-scheme" content="normal" />
+
+        <!-- TODO -->
+        <link rel="icon" href="images/favicon.ico" />
+        <link rel="stylesheet" href="../styles/mystyles.css" />
+        <link rel="stylesheet" href="../styles/navbar.css" />
+
+        <title>opportunities</title>
+    </head>
+
+    <body>
+        <script src="../scripts/theme-toggle.js"></script>
+
+        <ul class="navbar">
+            <li><a class="local-url" href="../index.html">Home page</a></li>
+            <li><a class="local-url" href="topic.html">Technology/Topic</a></li>
+            <li><a class="local-url" href="opportunities.html">Opportunities</a></li>
+            <li><a class="local-url" href="risks.html">Risks</a></li>
+            <li><a class="local-url" href="choices.html">Choices</a></li>
+            <li><a class="local-url active" href="meetings.html">Meeting Minutes</a></li>
+            <li><a class="local-url" href="references.html">References</a></li>
+            <li class="dropdown" style="width: 6em; border-right: none">
+                <a class="local-url dropbtn" href="case/index.html">Cases</a>
+                <ul class="dropdown-content">
+                    <li><a class="local-url" href="case/case1.html">Case 1</a></li>
+                    <li><a class="local-url" href="case/case2.html">Case 2</a></li>
+                    <li><a class="local-url" href="case/timeline.html">Timeline</a></li>
+                </ul>
+            </li>
+            <li class="dropdown" style="float: right; width: 6em">
+                <a class="dropbtn" onclick="setPreference(getColorPreference() === dark ? light : dark);"> Theme </a>
+                <ul class="dropdown-content">
+                    <li><a id="set-light-theme" onclick="setPreference(light);">Light</a></li>
+                    <li><a id="set-dark-theme" onclick="setPreference(dark);">Dark</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Main content -->
+        <h1>Meeting Minutes</h1>
+        <pre class="mermaid">
+                timeline
+                        10/05 : draft proposal presentation, discussed team roles and who would be researching what
+                        14/05 : submitted our draft presentation, started doing more research for our final presentation
+                        15/05 : more research as well as the final timeline (cases relating to our topic) for the presentation and the website
+                        17/05 : finalised colours for the timeline and continued working on the PowerPoint
+                        20/05 : designing the website, decided on having a light and dark mode and horizontal navigation bar
+        </pre>
+        
+        <br />
+        <img src="../images/meetings/meeting_1005.jpg" alt="Meeting at 10/05"/>
+        <br />
+        <img src="../images/meetings/meeting_1405.jpg" alt="Meeting at 14/05"/>
+        <br />
+        <img src="../images/meetings/meeting_1505.jpg" alt="Meeting at 15/05"/>
+        <br />
+        <img src="../images/meetings/meeting_2005.jpg" alt="Meeting at 20/05"/>
+        
+        <script type="module">
+            "use strict";
+            import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+
+            const theme = getColorPreference();
+            const dark_config = {
+                cScale0: "#8f0000",
+                cScale1: "#008f00",
+                cScale2: "#8f008f",
+                cScale3: "#9f9f00",
+                cScale4: "#4169E1",
+            };
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: theme === "dark-theme" ? "dark" : "default",
+                themeVariables: theme === "dark-theme" ? dark_config : undefined,
+            });
+
+            document.body.addEventListener("theme-changed", () => {
+                location.reload();
+            });
+        </script>
+
+        <!-- Sign and date the page, it's only polite! -->
+        <address>
+            Made 1 March 2021<br />
+            by Tony Clear.
+        </address>
+
+        <p>
+            <em
+                >thanks to W3C for tutorial and adapted code from
+                <a href="https://www.w3.org/Style/Examples/011/firstcss.en.html">Style Examples</a></em
+            >
+        </p>
+        <p>
+            <em
+                >also thanks to WDN for HTML and CSS resources and any adapted code snippets from
+                <a href="https://developer.mozilla.org/en-US/docs/Web">Mozilla Developer Network</a></em
+            >
+        </p>
+    </body>
+</html>
